@@ -1,8 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:ff4j="http://www.ff4j.org/schema/springns"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.ff4j.org/schema/springns           http://www.ff4j.org/schema/springns/springns-tags-1.4.xsd">
+
+  <context:component-scan base-package="org.ff4j"/>
+
+  <ff4j:ff4j id="ff4j" autocreate="false" fileName="ff4j.xml"/>
+
+  <ff4j:property-placeholder/>
+
+
+  <bean id="myFeatureBean" class="com.vish.ff.FeaturesBean">
+    <!--<property name="p" value="@ff4jProperty{pInt}"/>-->
+    <!--<property name="f" value="@ff4jFeature{AwesomeFeature}"/>-->
+  </bean>
+
 </beans>
