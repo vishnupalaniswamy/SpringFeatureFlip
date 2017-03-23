@@ -14,7 +14,7 @@
 	<ff4j:property-placeholder />
 	
 		
-	<bean id="myFeatureBean" class="com.vish.ff.FeaturesBean">
+	<bean id="myFeatureBean" class="com.vish.ff.FeaturesBean" scope="prototype">
 <!-- 		<property name="p" value="@ff4jProperty{pInt}" 			/>
 		<property name="f" value="@ff4jFeature{AwesomeFeature}" />
  -->	</bean>
